@@ -16,14 +16,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-app.get('/', (req, res) => {
-  res.json({
-    status: 'Ok',
-    data: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-  });
-});
 
-app.use('/api', api);
+app.use('/', api);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);

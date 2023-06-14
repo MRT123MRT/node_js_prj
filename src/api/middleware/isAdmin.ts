@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import database from '../../../knex';
 
 
-export default async function Middlware(req: Request, res: Response, next: NextFunction) {
+export default async function isAdmin(req: Request, res: Response, next: NextFunction) {
 
      const user = req.body.user;
 

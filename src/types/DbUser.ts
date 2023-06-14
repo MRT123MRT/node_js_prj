@@ -1,11 +1,7 @@
-export default class DbUser {
-    constructor(username: string, password: string) {
-        
-        this.username = username;
-        this.password = password;
-    }
-
-    username: string;
-    password: string;
-
-}
+export default function DbUser(username: string, password: string) {
+    return {
+      username,
+      password,
+    };
+  }
+  

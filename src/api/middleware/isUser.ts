@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import database from '../../../knex';
 
-export default async function Middlware(req: Request, res: Response, next: NextFunction) {
+export default async function isUser(req: Request, res: Response, next: NextFunction) {
 
     if (!req.headers.authorization)
         return res.sendStatus(401);
