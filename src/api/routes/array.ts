@@ -1,10 +1,10 @@
 import express, { Router } from 'express';
 import isAdmin from '../middleware/isAdmin';
 import isUser from '../middleware/isUser';
+import * as arrayController from '../controllers/arrayController';
 
-
-const arrayController = require('../controllers/arrayController');
 export const router: Router = express.Router();
+
 
 // GET /array
 router.get('/', isUser, arrayController.getArray);
@@ -19,7 +19,7 @@ router.post('/', isUser, isAdmin, arrayController.postArray);
 router.put('/:index', isUser, isAdmin, arrayController.putArrayIndex);
 
 // DELETE /array
-router.delete('/', isUser, isAdmin, arrayController.deleteFromArray);
+router.delete('/', isUser, isAdmin, arrayController.deleteArray);
 
 // DELETE /array/:index
-router.delete('/:index', isUser, isAdmin, arrayController.deleteIndexFromArray);
+router.delete('/:index', isUser, isAdmin, arrayController.deleteArrayIndex);
